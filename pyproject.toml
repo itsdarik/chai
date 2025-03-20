@@ -1,0 +1,65 @@
+[project]
+name = "chai"
+version = "1.0.0"
+description = "Chat with AI in the terminal."
+readme = "README.md"
+authors = [
+    {name = "Darik Harter", email = "darik.harter@gmail.com"}
+]
+maintainers = [
+    {name = "Darik Harter", email = "darik.harter@gmail.com"}
+]
+keywords = [
+    "ai",
+    "anthropic",
+    "chai",
+    "chat",
+    "chatgpt",
+    "claude",
+    "cli",
+    "codestral",
+    "gemini",
+    "genai",
+    "google",
+    "gpt",
+    "grok",
+    "le chat",
+    "llm",
+    "mistral",
+    "ollama",
+    "openai",
+    "terminal",
+    "xai",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Chat",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Terminals",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+requires-python = ">=3.13.2"
+dependencies = [
+    "anthropic>=0.49.0",
+    "google-genai>=1.7.0",
+    "mistralai>=1.5.2",
+    "openai>=1.67.0",
+    "rich>=13.9.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/itsdarik/chai"
+Repository = "https://github.com/itsdarik/chai"
+Issues = "https://github.com/itsdarik/chai/issues"
+Changelog = "https://github.com/itsdarik/chai/releases"
+
+[project.scripts]
+chai = "chai.cli:main"
