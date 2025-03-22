@@ -25,10 +25,6 @@ Chat with AI in the terminal.
 - **No Model Downloads**: No need to download models and keep them up-to-date.
 - **No Hardware Investment**: No need to buy expensive hardware.
 
-### Compared to OpenRouter
-
-- **Cost-Effective**: Avoid the OpenRouter fee.
-
 ## Usage
 
 1. Set your API key(s):
