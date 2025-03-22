@@ -3,6 +3,8 @@ name = "chai"
 version = "1.0.0"
 description = "Chat with AI in the terminal."
 readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 authors = [
     {name = "Darik Harter", email = "darik.harter@gmail.com"}
 ]
