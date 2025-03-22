@@ -60,6 +60,3 @@ Homepage = "https://github.com/itsdarik/chai"
 Repository = "https://github.com/itsdarik/chai"
 Issues = "https://github.com/itsdarik/chai/issues"
 Changelog = "https://github.com/itsdarik/chai/releases"
-
-[project.scripts]
-chai = "chai.cli:main"
