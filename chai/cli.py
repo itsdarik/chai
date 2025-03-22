@@ -244,8 +244,10 @@ def chat(args: ChatArgs) -> None:
     key, model = split_model(args.model)
 
     spinner = Spinner()
-    chat = get_provider(key).create_chat(model)
-    spinner.stop()
+    try:
+        chat = get_provider(key).create_chat(model)
+    finally:
+        spinner.stop()
 
     input_loop(chat, args)
 
