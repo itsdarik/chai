@@ -16,6 +16,9 @@ Chat with AI in the terminal.
 - **Cost-Effective**: Less expensive than premium subscriptions for light use.
 - **Seamless Access**: No login required after setting up your API key(s).
 - **Unified Interface**: Access multiple providers and models from a single interface.
+- **Enhanced Privacy**:
+  - Paid API tiers typically don't train on your data (check provider privacy policies).
+  - All chat history is stored locally on your device.
 
 ### Compared to Local LLMs like `ollama`
 - **State of the Art Models**: Access full, non-distilled, flagship models.
