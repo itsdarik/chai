@@ -53,6 +53,7 @@ def send(chat: Chat, user_input: str, args: ChatArgs) -> None:
     global _receiving_response, _stop_response
     _receiving_response = True
     _stop_response = False
+    spinner = None
 
     try:
         response = chat.send(user_input)
@@ -79,6 +80,9 @@ def send(chat: Chat, user_input: str, args: ChatArgs) -> None:
     finally:
         _receiving_response = False
         _stop_response = False
+
+        if spinner:
+            spinner.stop()
 
 
 def save_chat(user_input: str, chat: Chat) -> None:
