@@ -62,3 +62,29 @@ Homepage = "https://github.com/itsdarik/chai"
 Repository = "https://github.com/itsdarik/chai"
 Issues = "https://github.com/itsdarik/chai/issues"
 Changelog = "https://github.com/itsdarik/chai/releases"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "poethepoet>=0.33.1",
+    "ruff>=0.11.5",
+]
+
+[tool.poe.tasks]
+all = { sequence = ["format", "check", "typecheck"], help = "Run all tasks" }
+format = { cmd = "ruff format", help = "Format the code" }
+check = { cmd = "ruff check", help = "Check the code" }
+typecheck = { cmd = "mypy chai.py", help = "Typecheck the code" }
+
+[tool.ruff]
+lint.select = [
+    "B",
+    "C4",
+    "E",
+    "F",
+    "I",
+    "PTH",
+    "SIM",
+    "UP",
+    "W",
+]
