@@ -30,7 +30,8 @@ class Provider(ABC):
 
     @property
     def key(self) -> str:
-        """The provider key, which is the lowercase provider name with spaces replaced by dashes."""
+        """The provider key, which is the lowercase provider name with spaces replaced
+        by dashes."""
         return self._name.lower().replace(" ", "-")
 
     @property
@@ -51,7 +52,7 @@ class Provider(ABC):
         try:
             return self._get_models()
         except Exception as e:
-            raise RuntimeError(f"Error getting models: {e}")
+            raise RuntimeError(f"Error getting models: {e}") from e
 
     @abstractmethod
     def _get_models(self) -> list[str]:

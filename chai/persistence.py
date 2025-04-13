@@ -52,7 +52,7 @@ def save_chat(chat: Chat, filename: str) -> Path:
     path = get_save_file_path(filename)
     ensure_save_dir()
 
-    with open(path, "w") as save_file:
+    with Path.open(path, "w") as save_file:
         json.dump(serialize_conversation(chat), save_file, indent=4)
 
     return path
@@ -65,7 +65,7 @@ def load_chat(filename: str, chat: Chat) -> None:
     if not path.exists():
         raise FileNotFoundError(f"File '{path}' does not exist.")
 
-    with open(path) as save_file:
+    with Path.open(path) as save_file:
         conversation = json.load(save_file)
 
     if "model" not in conversation:
@@ -76,7 +76,8 @@ def load_chat(filename: str, chat: Chat) -> None:
 
     if conversation["model"] != chat.model:
         raise ValueError(
-            f"model in file '{path}' ({conversation['model']}) does not match current model ({chat.model})."
+            f"model in file '{path}' ({conversation['model']}) does not match current "
+            f"model ({chat.model})."
         )
 
     chat.load([Message.from_dict(message) for message in conversation["messages"]])

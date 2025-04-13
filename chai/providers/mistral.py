@@ -10,7 +10,7 @@
 # ANY KIND, either express or implied.  See the License for the specific language
 # governing permissions and limitations under the License.
 
-from typing import Generator
+from collections.abc import Generator
 
 from mistralai import Mistral
 
@@ -25,7 +25,7 @@ class MistralChat(Chat):
         super().__init__(model)
         self._client: Mistral = Mistral(api_key=api_key)
 
-    def _send(self, _: str) -> Generator[str, None, None]:
+    def _send(self, _: str) -> Generator[str]:
         response = self._client.chat.stream(
             model=self._model,
             messages=[message.to_dict() for message in self._history],
