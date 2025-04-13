@@ -10,7 +10,7 @@
 # ANY KIND, either express or implied.  See the License for the specific language
 # governing permissions and limitations under the License.
 
-from typing import Generator
+from collections.abc import Generator
 
 from anthropic import Anthropic
 
@@ -29,14 +29,13 @@ class AnthropicChat(Chat):
         super().__init__(model)
         self._client: Anthropic = Anthropic(api_key=api_key)
 
-    def _send(self, _: str) -> Generator[str, None, None]:
+    def _send(self, _: str) -> Generator[str]:
         with self._client.messages.stream(
             model=self._model,
             max_tokens=MAX_OUTPUT_TOKENS,
             messages=[message.to_dict() for message in self._history],
         ) as stream:
-            for text in stream.text_stream:
-                yield text
+            yield from stream.text_stream
 
 
 class AnthropicProvider(Provider):

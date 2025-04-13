@@ -11,7 +11,7 @@
 # governing permissions and limitations under the License.
 
 from abc import ABC, abstractmethod
-from typing import Generator
+from collections.abc import Generator
 
 from .message import Message
 
@@ -42,7 +42,7 @@ class Chat(ABC):
         self.clear()
         self._history.extend(history)
 
-    def send(self, message: str) -> Generator[str, None, None]:
+    def send(self, message: str) -> Generator[str]:
         """Send a message to the model and stream the response."""
         self._history.append(Message(role="user", content=message))
 
@@ -55,6 +55,6 @@ class Chat(ABC):
         self._history.append(Message(role="assistant", content=full_content))
 
     @abstractmethod
-    def _send(self, message: str) -> Generator[str, None, None]:
+    def _send(self, message: str) -> Generator[str]:
         """Provider-specific message sending and response streaming."""
         pass

@@ -10,7 +10,7 @@
 # ANY KIND, either express or implied.  See the License for the specific language
 # governing permissions and limitations under the License.
 
-from typing import Generator
+from collections.abc import Generator
 
 from google import genai
 from google.genai.types import Content, Part
@@ -28,7 +28,7 @@ class GoogleChat(Chat):
         self._client: genai.Client = genai.Client(api_key=api_key)
         self._chat = self._client.chats.create(model=model)
 
-    def _send(self, message: str) -> Generator[str, None, None]:
+    def _send(self, message: str) -> Generator[str]:
         for chunk in self._chat.send_message_stream(message):
             content = chunk.text
             if content:

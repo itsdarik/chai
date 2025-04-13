@@ -10,7 +10,7 @@
 # ANY KIND, either express or implied.  See the License for the specific language
 # governing permissions and limitations under the License.
 
-from typing import Generator
+from collections.abc import Generator
 
 from openai import OpenAI
 
@@ -27,7 +27,7 @@ class XAIChat(Chat):
         super().__init__(model)
         self._client: OpenAI = OpenAI(api_key=api_key, base_url=XAI_URL)
 
-    def _send(self, _: str) -> Generator[str, None, None]:
+    def _send(self, _: str) -> Generator[str]:
         response = self._client.chat.completions.create(
             model=self._model,
             messages=[message.to_dict() for message in self._history],

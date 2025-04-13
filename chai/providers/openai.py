@@ -10,7 +10,7 @@
 # ANY KIND, either express or implied.  See the License for the specific language
 # governing permissions and limitations under the License.
 
-from typing import Generator
+from collections.abc import Generator
 
 from openai import OpenAI
 from openai.types.responses import ResponseTextDeltaEvent
@@ -26,7 +26,7 @@ class OpenAIChat(Chat):
         super().__init__(model)
         self._client: OpenAI = OpenAI(api_key=api_key)
 
-    def _send(self, _: str) -> Generator[str, None, None]:
+    def _send(self, _: str) -> Generator[str]:
         with self._client.responses.stream(
             model=self._model, input=[message.to_dict() for message in self._history]
         ) as stream:
