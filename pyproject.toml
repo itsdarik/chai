@@ -62,7 +62,7 @@ chai = "chai.cli:main"
 all = { sequence = ["format", "check", "typecheck"], help = "Run all tasks" }
 format = { cmd = "ruff format", help = "Format the code" }
 check = { cmd = "ruff check", help = "Check the code" }
-typecheck = { cmd = "mypy chai.py", help = "Typecheck the code" }
+typecheck = { cmd = "mypy .", help = "Typecheck the code" }
 
 [tool.ruff]
 lint.select = [

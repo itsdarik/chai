@@ -11,6 +11,7 @@
 # governing permissions and limitations under the License.
 
 import json
+import typing
 from pathlib import Path
 
 from .base.chat import Chat
@@ -31,7 +32,7 @@ def ensure_save_dir() -> None:
     SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def serialize_conversation(chat: Chat) -> dict[str, any]:
+def serialize_conversation(chat: Chat) -> dict[str, typing.Any]:
     """Serialize a chat conversation to a dictionary."""
     return {
         "model": chat.model,
