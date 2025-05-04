@@ -1,7 +1,7 @@
 [project]
 name = "chai"
-version = "1.0.2"
-description = "Chat with AI in the terminal"
+version = "2.0.0"
+description = "Chat with Google DeepMind Gemini models in the terminal"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
@@ -13,32 +13,20 @@ maintainers = [
 ]
 keywords = [
     "ai",
-    "anthropic",
     "chai",
     "chat",
-    "chatgpt",
-    "claude",
     "cli",
-    "codestral",
     "gemini",
     "genai",
     "google",
-    "gpt",
-    "grok",
-    "le chat",
     "llm",
-    "mistral",
-    "ollama",
-    "openai",
     "terminal",
-    "xai",
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
     "Intended Audience :: Developers",
     "Intended Audience :: End Users/Desktop",
-    "License :: OSI Approved :: Apache Software License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.13",
@@ -50,8 +38,8 @@ classifiers = [
 ]
 requires-python = ">=3.13.2"
 dependencies = [
-    "google-genai>=1.7.0",
-    "rich>=13.9.4",
+    "google-genai>=1.13.0",
+    "rich>=14.0.0",
 ]
 
 [project.urls]
@@ -63,9 +51,12 @@ Changelog = "https://github.com/itsdarik/chai/releases"
 [dependency-groups]
 dev = [
     "mypy>=1.15.0",
-    "poethepoet>=0.33.1",
-    "ruff>=0.11.5",
+    "poethepoet>=0.34.0",
+    "ruff>=0.11.8",
 ]
+
+[project.scripts]
+chai = "chai.cli:main"
 
 [tool.poe.tasks]
 all = { sequence = ["format", "check", "typecheck"], help = "Run all tasks" }
