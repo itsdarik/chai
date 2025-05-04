@@ -11,21 +11,13 @@
 # governing permissions and limitations under the License.
 
 from ..base.provider import Provider
-from .anthropic import AnthropicProvider
 from .google import GoogleProvider
-from .mistral import MistralProvider
-from .openai import OpenAIProvider
-from .xai import XAIProvider
 
 
 def get_providers() -> list[Provider]:
     """Return a list of available providers."""
     return [
-        AnthropicProvider(),
         GoogleProvider(),
-        MistralProvider(),
-        OpenAIProvider(),
-        XAIProvider(),
     ]
 
 
