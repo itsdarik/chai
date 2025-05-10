@@ -45,7 +45,7 @@ wheels = [
 [[package]]
 name = "chai"
 version = "2.0.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "google-genai" },
     { name = "prompt-toolkit" },

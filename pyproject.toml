@@ -58,7 +58,11 @@ dev = [
 ]
 
 [project.scripts]
-chai = "chai.cli:main"
+chai = "chai.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.poe.tasks]
 all = { sequence = ["format", "check", "typecheck"], help = "Run all tasks" }
