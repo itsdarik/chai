@@ -38,7 +38,7 @@ classifiers = [
 ]
 requires-python = ">=3.13"
 dependencies = [
-    "google-genai>=1.13.0",
+    "google-genai>=1.14.0",
     "prompt-toolkit>=3.0.51",
     "rich>=14.0.0",
     "typer>=0.15.3",
@@ -54,7 +54,7 @@ Changelog = "https://github.com/itsdarik/chai/releases"
 dev = [
     "mypy>=1.15.0",
     "poethepoet>=0.34.0",
-    "ruff>=0.11.8",
+    "ruff>=0.11.9",
 ]
 
 [project.scripts]
