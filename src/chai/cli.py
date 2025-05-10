@@ -1,3 +1,5 @@
+import typing
+
 import typer
 
 from .commands.chat import chat as _chat
@@ -11,9 +13,13 @@ app = typer.Typer(
 )
 
 
-@app.command("chat", help="Chat with Gemini.")
-def chat():
-    _chat()
+@app.command("chat", help="Chat with Gemini.", epilog="Use `chai list` to list models.")
+def chat(
+    model: typing.Annotated[str, typer.Argument(help="Model to chat with.")],
+):
+    if not model.startswith("models/"):
+        model = f"models/{model}"
+    _chat(model=model)
 
 
 @app.command("list", help="List Gemini models.")

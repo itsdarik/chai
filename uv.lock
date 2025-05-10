@@ -58,6 +58,7 @@ dev = [
     { name = "mypy" },
     { name = "poethepoet" },
     { name = "ruff" },
+    { name = "types-pygments" },
 ]
 
 [package.metadata]
@@ -73,6 +74,7 @@ dev = [
     { name = "mypy", specifier = ">=1.15.0" },
     { name = "poethepoet", specifier = ">=0.34.0" },
     { name = "ruff", specifier = ">=0.11.9" },
+    { name = "types-pygments", specifier = ">=2.19.0.20250305" },
 ]
 
 [[package]]
@@ -465,6 +467,27 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/98/1a/5f36851f439884bcfe8539f6a20ff7516e7b60f319bbaf69a90dc35cc2eb/typer-0.15.3.tar.gz", hash = "sha256:818873625d0569653438316567861899f7e9972f2e6e0c16dab608345ced713c", size = 101641, upload-time = "2025-04-28T21:40:59.204Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/48/20/9d953de6f4367163d23ec823200eb3ecb0050a2609691e512c8b95827a9b/typer-0.15.3-py3-none-any.whl", hash = "sha256:c86a65ad77ca531f03de08d1b9cb67cd09ad02ddddf4b34745b5008f43b239bd", size = 45253, upload-time = "2025-04-28T21:40:56.269Z" },
+]
+
+[[package]]
+name = "types-docutils"
+version = "0.21.0.20241128"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/dd/df/64e7ab01a4fc5ce46895dc94e31cffc8b8087c8d91ee54c45ac2d8d82445/types_docutils-0.21.0.20241128.tar.gz", hash = "sha256:4dd059805b83ac6ec5a223699195c4e9eeb0446a4f7f2aeff1759a4a7cc17473", size = 26739, upload-time = "2024-11-28T02:54:57.756Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/59/b6/10ba95739f2cbb9c5bd2f6568148d62b468afe01a94c633e8892a2936d8a/types_docutils-0.21.0.20241128-py3-none-any.whl", hash = "sha256:e0409204009639e9b0bf4521eeabe58b5e574ce9c0db08421c2ac26c32be0039", size = 34677, upload-time = "2024-11-28T02:54:55.64Z" },
+]
+
+[[package]]
+name = "types-pygments"
+version = "2.19.0.20250305"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "types-docutils" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e6/be/88f777c75022b111f9e9fe4cdb430bf92892fe90188b0fd037601ded2ea1/types_pygments-2.19.0.20250305.tar.gz", hash = "sha256:044c50e80ecd4128c00a7268f20355e16f5c55466d3d49dfda09be920af40b4b", size = 18521, upload-time = "2025-03-05T02:47:46.463Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6f/c6/b6d3ad345b76425e46d25a2da1758603d80c3a59405bdcbbbaa86d8c8070/types_pygments-2.19.0.20250305-py3-none-any.whl", hash = "sha256:ca88aae5ec426f9b107c0f7adc36dc096d2882d930a49f679eaf4b8b643db35d", size = 25638, upload-time = "2025-03-05T02:47:45.045Z" },
 ]
 
 [[package]]
