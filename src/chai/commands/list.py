@@ -15,6 +15,10 @@ def list_models():
 
     with console.status("Fetching models..."):
         for model in get_models():
-            table.add_row(model.name, model.display_name, model.description)
+            table.add_row(
+                model.name.removeprefix("models/"),
+                model.display_name,
+                model.description,
+            )
 
     console.print(table)
