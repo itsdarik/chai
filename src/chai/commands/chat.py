@@ -5,10 +5,6 @@ from google.genai.chats import Chat
 from prompt_toolkit import PromptSession
 from prompt_toolkit.lexers import PygmentsLexer
 from pygments.lexers.markup import MarkdownLexer
-from rich.console import Console
-from rich.live import Live
-from rich.markdown import Markdown
-from rich.spinner import Spinner
 
 from ..gemini import get_chat, get_models
 
@@ -56,12 +52,8 @@ def _chat(model: str):
     while True:
         try:
             user_input = _get_user_input(model=model, session=chat_session.prompt)
-            with Live(console=Console()) as live:
-                live.update(Spinner(name="dots"))
-                full_response = ""
-                for chunk in _get_response(chat=chat_session.chat, prompt=user_input):
-                    full_response += chunk
-                    live.update(Markdown(markup=full_response))
+            for chunk in _get_response(chat=chat_session.chat, prompt=user_input):
+                print(chunk, end="", flush=True)
         except KeyboardInterrupt:
             continue
         except EOFError:

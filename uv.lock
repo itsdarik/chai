@@ -49,7 +49,6 @@ source = { editable = "." }
 dependencies = [
     { name = "google-genai" },
     { name = "prompt-toolkit" },
-    { name = "rich" },
     { name = "typer" },
 ]
 
@@ -65,7 +64,6 @@ dev = [
 requires-dist = [
     { name = "google-genai", specifier = ">=1.14.0" },
     { name = "prompt-toolkit", specifier = ">=3.0.51" },
-    { name = "rich", specifier = ">=14.0.0" },
     { name = "typer", specifier = ">=0.15.3" },
 ]
 
