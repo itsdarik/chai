@@ -3,8 +3,6 @@ import typing
 
 from google.genai.chats import Chat
 from prompt_toolkit import PromptSession
-from prompt_toolkit.lexers import PygmentsLexer
-from pygments.lexers.markup import MarkdownLexer
 
 from ..gemini import get_chat, get_models
 
@@ -26,7 +24,6 @@ def _get_user_input(model: str, session: PromptSession) -> str:
     """Get user input."""
     user_input = session.prompt(
         f"[{model.removeprefix('models/')}] >>> ",
-        lexer=PygmentsLexer(MarkdownLexer),
         multiline=True,
         prompt_continuation="... ",
         wrap_lines=False,
